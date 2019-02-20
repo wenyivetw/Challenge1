@@ -1,0 +1,429 @@
+body {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #F5F5F5;
+
+  grid-template-areas:
+    "title title"
+    "menu  menu"
+    "main  main2"
+    "main3  main3"
+    "main4  main4"
+    "main5  main5"
+    "main6  main6"
+    "main7 	main7"
+    "foot  foot ";
+}
+
+.header {
+  grid-area: title;
+}
+
+.main4 {
+  grid-area: main4;
+}
+
+.main5 {
+  grid-area: main5;
+}
+
+.main6 {
+  grid-area: main6;
+}
+
+.main7 {
+  grid-area: main7;
+}
+
+.main2 {
+  grid-area: main2;
+}
+
+.main3 {
+  grid-area: main3;
+}
+
+.main {
+  grid-area: main;
+}
+
+#menu {
+  grid-area: menu;
+}
+
+.foot {
+  grid-area: foot;
+}
+
+header {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.menutoggle {
+  margin-left: auto;
+}
+
+.menutoggle a {
+  font-size: 2em;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.active {
+  /*display: initial; */
+  max-height: 400px;
+  transition: max-height 0.6s;
+}
+
+.inactive {
+  /*display: none;*/
+  max-height: 0px;
+  trasition: max-height 0.6s;
+}
+
+img {
+  position: absolute;
+  right: 17%;
+  width: 160px;
+  height: 25px;
+}
+
+#chart_div {
+  height: 150px
+}
+
+#donutchart {
+  width: 150px;
+  height: 150px;
+}
+
+#acceleratie_chart {
+  height: 150px;
+}
+
+#gforce_chart {
+  height: 150px;
+}
+
+#aaot_chart {
+  height: 150px;
+}
+
+.w3-card-4 {
+  background-color: white;
+}
+
+.w3-container {
+  padding: 0px;
+}
+
+.w3-card {
+  margin: 0px;
+}
+
+.graph_width {
+  width: 98%;
+}
+
+.card_header {
+  font-size: 12px;
+}
+
+.title_vi {
+  display: inline-block;
+  position: absolute;
+  left: 3%;
+  top: 2.5%;
+  font-size: 16px;
+  font-family: Century Gothic;
+}
+
+.title_vo {
+  display: inline-block;
+  position: absolute;
+  left: 3%;
+  top: 52%;
+  font-size: 16px;
+  font-family: Century Gothic;
+}
+
+.title_vt {
+  display: inline-block;
+  position: absolute;
+  left: 3%;
+  top: 70.2%;
+  font-size: 16px;
+  font-family: Century Gothic;
+}
+
+.title_tools {
+  display: inline-block;
+  position: absolute;
+  left: 3%;
+  top: 88%;
+  font-size: 16px;
+  font-family: Century Gothic;
+}
+
+#help_text {
+  font-size: 13px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.marginleft {
+  margin-left: 10px;
+}
+
+.margintop {
+  margin-top: 66px;
+}
+
+.margintop2 {
+  margin-top: 32px;
+}
+
+.flex-container {
+  margin-left: 10px;
+}
+
+
+@media only screen and (min-width: 601px) {
+  body {
+    background-color: rgb(245, 245, 245);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: (200px 200px 200px 200px);
+    grid-gap: 10px;
+    grid-template-areas:
+      "title title title title"
+      "main  main   main main"
+      "main3 main3  main4 main4"
+      "main5 main5	main5 main5"
+      "main6 main6  main7 main7 ";
+
+
+  }
+
+  #donutchart {
+    width: 275px;
+    height: 150px;
+  }
+
+  #chart_div {
+    margin-left: 50px;
+    width: 275px;
+    height: 150px;
+  }
+
+  #table_div {
+    width: 100%;
+    height: 250px;
+  }
+
+  #acceleratie_chart {
+    width: 100%;
+    height: 250px;
+  }
+
+  #gforce_chart {
+    width: 100%;
+    height: 250px;
+  }
+
+  #aaot_chart {
+    width: 100%;
+    height: 250px;
+  }
+
+  .w3-card-4 {
+    background-color: white;
+  }
+
+  .w3-container {
+    padding: 50px;
+  }
+
+  .w3-card {
+    margin: 0px;
+  }
+
+  .graph_width {
+    width: 100%;
+  }
+
+  .card_header {
+    font-size: 18px;
+  }
+
+  .title_vi {
+    display: inline-block;
+    position: absolute;
+    left: 3%;
+    top: 4.5%;
+    font-size: 18px;
+  }
+
+  .title_vo {
+    display: inline-block;
+    position: absolute;
+    left: 3%;
+    top: 48.5%;
+    font-size: 18px;
+  }
+
+  .title_vt {
+    display: inline-block;
+    position: absolute;
+    left: 3%;
+    top: 77%;
+    font-size: 18px;
+  }
+
+  .title_tools {
+    display: inline-block;
+    position: absolute;
+    left: 70%;
+    top: 77%;
+    font-size: 18px;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  img {
+    width: 320px;
+    height: 50px;
+  }
+
+  .margintop {
+    margin-top: 87px;
+  }
+
+}
+
+/*Laptop versie*/
+@media only screen and (min-width: 1025px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    grid-template-areas:
+      "title title title title"
+      "main  main   main main"
+      "main3 main4  main8 main8"
+      "main5 main5	main9 main9"
+      "main6 main7  main10 main10 ";
+  }
+
+  #align_content {
+    align-content: center;
+  }
+
+  .margintop {
+    margin-top: 100px;
+  }
+
+  #donutchart {
+    width: 400px;
+    height: 200px;
+  }
+
+  #chart_div {
+    width: 400px;
+    height: 200px;
+  }
+
+  #table_div {
+    width: 425px;
+    height: 200px;
+  }
+
+  #acceleratie_chart {
+    width: 400px;
+    height: 200px;
+  }
+
+  #gforce_chart {
+    width: 426px;
+    height: 200px;
+  }
+
+  #aaot_chart {
+    width: 850px;
+    height: 350px;
+  }
+
+  .w3-card {
+    background-color: white;
+  }
+
+  .w3-container {
+    padding: 50px;
+  }
+
+  .w3-card {
+    margin: 0px;
+  }
+
+  .graph_width {
+    width: 100%;
+  }
+
+  .card_header {
+    font-size: 18px;
+  }
+
+  .title_vi {
+    display: inline-block;
+    position: absolute;
+    left: 3%;
+    top: 4%;
+    font-size: 20px;
+  }
+
+  .title_vo {
+    display: inline-block;
+    position: absolute;
+    left: 3%;
+    top: 47%;
+    font-size: 20px;
+  }
+
+  .title_vt {
+    display: inline-block;
+    position: absolute;
+    left: 3%;
+    top: 81%;
+    font-size: 20px;
+  }
+
+  .title_tools {
+    display: inline-block;
+    position: absolute;
+    left: 47%;
+    top: 81%;
+    font-size: 20px;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  img {
+    position: absolute;
+    right: 50%;
+    width: 320px;
+    height: 50px;
+  }
+
+}

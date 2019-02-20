@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard Spacex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="styles/main.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <script type="text/javascript">
+    google.charts.load("current", {
+      packages: ["corechart"]
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Brandstof', 'Percentage'],
+        ['Vol', 90],
+        ['Leeg', 10],
+
+      ]);
+
+      var options = {
+        title: '',
+        pieHole: 0.4,
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+      chart.draw(data, options);
+    }
+  </script>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['gauge']
+    });
+
+    google.charts.load('current', {
+      'packages': ['gauge']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['km/u', 180],
+      ]);
+
+      var options = {
+        width: 400,
+        height: 120,
+        redFrom: 90,
+        redTo: 100,
+        yellowFrom: 75,
+        yellowTo: 90,
+        minorTicks: 5
+      };
+
+      var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+
+      setInterval(function () {
+        data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+        chart.draw(data, options);
+      }, 13000);
+      setInterval(function () {
+        data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+        chart.draw(data, options);
+      }, 5000);
+      setInterval(function () {
+        data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
+        chart.draw(data, options);
+      }, 26000);
+    }
+  </script>
+  <!--<div id="table_div"></div>-->
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['table']
+    });
+    google.charts.setOnLoadCallback(drawTable);
+
+    function drawTable() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Naam');
+      data.addColumn('number', 'Aantal stuks');
+      data.addRows([
+        ['Ontbijt', 100],
+        ['Lunch', 85],
+        ['Dinner', 130],
+        ['Vitaminewater', 300],
+        ['Water', 1000],
+
+      ]);
+
+      var table = new google.visualization.Table(document.getElementById('table_div'));
+
+      table.draw(data, {
+        showRowNumber: true,
+        width: '100%',
+        height: '100%'
+      });
+    }
+  </script>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Tijd', 'Snelheid'],
+        ['9:50:35', 185],
+        ['10:11:09', 175],
+        ['10:23:57', 100],
+        ['10:35:45', 75],
+        ['10:47:43', 50],
+        ['10:48:38', 50]
+      ]);
+
+      var options = {
+        curveType: 'function',
+        legend: {
+          position: 'bottom'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('acceleratie_chart'));
+
+      chart.draw(data, options);
+    }
+  </script>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'x');
+      data.addColumn('number', 'values');
+      data.addColumn({
+        id: 'i0',
+        type: 'number',
+        role: 'interval'
+      });
+      data.addColumn({
+        id: 'i1',
+        type: 'number',
+        role: 'interval'
+      });
+      data.addColumn({
+        id: 'i2',
+        type: 'number',
+        role: 'interval'
+      });
+      data.addColumn({
+        id: 'i2',
+        type: 'number',
+        role: 'interval'
+      });
+      data.addColumn({
+        id: 'i2',
+        type: 'number',
+        role: 'interval'
+      });
+      data.addColumn({
+        id: 'i2',
+        type: 'number',
+        role: 'interval'
+      });
+
+      data.addRows([
+        [1, 100, 90, 110, 85, 96, 104, 120],
+        [2, 120, 95, 130, 90, 113, 124, 140],
+        [3, 130, 105, 140, 100, 117, 133, 139],
+        [4, 90, 85, 95, 85, 88, 92, 95],
+        [5, 70, 74, 63, 67, 69, 70, 72],
+        [6, 30, 39, 22, 21, 28, 34, 40],
+        [7, 80, 77, 83, 70, 77, 85, 90],
+        [8, 100, 90, 110, 85, 95, 102, 110]
+      ]);
+
+      // The intervals data as narrow lines (useful for showing raw source data)
+      var options_lines = {
+        curveType: 'function',
+        lineWidth: 4,
+        intervals: {
+          'style': 'line'
+        },
+        legend: 'none'
+      };
+
+      var chart_lines = new google.visualization.LineChart(document.getElementById('gforce_chart'));
+      chart_lines.draw(data, options_lines);
+    }
+  </script>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Tijd', 'Afstand'],
+        ['0', 0],
+        ['10', 1500],
+        ['20', 1850],
+        ['30', 1750]
+      ]);
+
+      var options = {
+        curveType: 'function',
+        legend: {
+          position: 'bottom'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('aaot_chart'));
+
+      chart.draw(data, options);
+    }
+  </script>
+  <script type="text/javascript">
+    function calc_fz() {
+      var massa = document.getElementById('massa').value;
+      var calc = massa * 9.81;
+      document.getElementById('calc_fz_anws').value = calc;
+    }
+  </script>
+  <script type="text/javascript">
+    function berekenRente() {
+      var massa = parseInt(document.getElementById('massa').value);
+      var antwoord = massa * 9.81;
+      var tekst = '';
+
+      tekst = antwoord + '';
+      document.getElementById('calc_fz_anws').innerHTML = tekst;
+    }
+
+    window.onload = function () {
+      document.getElementById('bereken').onclick = function () {
+        berekenRente();
+      };
+    };
+  </script>
+</head>
+
+<body id="align_content">
+  <header>
+    <img class="header" src="img/logo.png" alt="spacex"></>
+  </header>
+  <div class="title_vi">Voertuig informatie</div>
+  <div class="main flex-container margintop">
+    <div class="w3-card-4">
+      <header class="w3-container w3-blue card_header">
+        <p>Brandstof</p>
+      </header>
+      <div class="w3-container" style="padding: 0px;">
+        <div class="w3-container" style="margin: 0px;" id="donutchart">
+        </div>
+      </div>
+    </div>
+    <div class="w3-card-4 marginleft">
+      <header class="w3-container w3-blue card_header">
+        <p>Snelheid</p>
+      </header>
+      <div class="w3-container" style="padding: 0px;">
+        <div class="w3-container" id="chart_div">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main3 flex-container margintop2">
+    <div class="w3-card-4 graph_width">
+      <header class="w3-container w3-blue card_header">
+        <p>Acceleratie</p>
+      </header>
+      <div class="w3-container" style="padding: 0px;">
+        <div class="w3-container" style="margin: 0px;" id="acceleratie_chart">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main4 flex-container margintop2" style="margin-left: 0px;">
+    <div class="w3-card-4 graph_width">
+      <header class="w3-container w3-blue card_header">
+        <p>G-force</p>
+      </header>
+      <div class="w3-container" style="padding: 0px;">
+        <div class="w3-container" style="margin: 0px;" id="gforce_chart">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="title_vo">Voertuig omgeving</div>
+  <div class="main5 flex-container margintop">
+    <div class="w3-card-4 graph_width">
+      <header class="w3-container w3-blue card_header">
+        <p>Afstand afgelegd over tijd</p>
+      </header>
+      <div class="w3-container" style="padding: 0px;">
+        <div class="w3-container" style="margin: 0px;" id="aaot_chart">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="title_vt">Voorraden</div>
+  <div class="main6 flex-container margintop">
+    <div class="w3-card-4 graph_width">
+      <header class="w3-container w3-blue card_header">
+        <p>Voedsel tabel</p>
+      </header>
+      <div class="w3-container" style="padding: 0px;">
+        <div class="w3-container" style="margin: 0px;" id="table_div">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="title_tools">Tools</div>
+  <div class="main7 flex-container margintop" style="margin-left: 0px;">
+    <div class="w3-card-4 graph_width">
+      <header class="w3-container w3-blue card_header">
+        <p>Zwaartekracht formule</p>
+      </header>
+      <div class="w3-container" style="padding: 0px;">
+        <div class="w3-container" style="margin: 0px;" id="">
+          <p id="help_text">Voeg massa toe om zwaartekracht te berekenen.</p>
+          <input type="number" id="massa" placeholder="Massa">
+          <button id="bereken">
+            Bereken
+          </button>
+          <label id="calc_fz_anws">Antwoord</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<footer>
+</footer>
+
+</html>
